@@ -1,0 +1,193 @@
+/* =========================
+   Theme Variables
+========================= */
+:root {
+    --bg-color: #000;
+    --text-color: #ffffff;
+    --header-bg: #000;
+    --header-border: #000;
+    --card-bg: #111111;
+    --card-border: #333333;
+    --scrollbar-thumb: #4d4d4d;
+    --scrollbar-track: transparent;
+    --scrollbar-width: 6px;
+    --card-radius: 10px;
+    --padding: 20px;
+}
+
+/* =========================
+   General Styles
+========================= */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+
+/* =========================
+   Header
+========================= */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* logo left, title right */
+    padding: 15px 25px;
+    background: var(--header-bg);
+    border-bottom: 3px solid var(--header-border); /* thicker */
+    position: relative; /* for center nav */
+}
+
+header .logo img {
+    height: 40px;
+}
+
+/* Center Navigation (optional) */
+.nav-center {
+    display: flex;
+    gap: 25px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.nav-center a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-size: 1rem;
+    opacity: 0.9;
+    transition: 0.2s;
+}
+
+.nav-center a:hover {
+    opacity: 1;
+}
+
+/* Header Title */
+.site-title {
+    font-size: 1.8rem;
+    margin: 0;
+    font-weight: 600;
+}
+
+/* =========================
+   Socials
+========================= */
+
+
+.socials img {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.socials img:hover {
+    transform: scale(1.1);
+}
+
+/* =========================
+   Cards Grid
+========================= */
+.cards {
+    display: grid;
+    gap: 20px;
+    padding: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    margin-top: 60px; /* gap between socials/header and cards */
+}
+
+/* =========================
+   Individual Card
+========================= */
+.card {
+    background: var(--card-bg);
+    padding: var(--padding);
+    border-radius: var(--card-radius);
+    border: 3px solid var(--card-border); /* thicker */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Card Title */
+.card h2 {
+    margin: 0 0 12px 0;
+    padding-top: 3px;
+}
+
+/* Scrollable Card Content */
+.card-content {
+    max-height: 250px;
+    overflow-y: auto;
+    padding-right: 8px;
+}
+
+.card-content::-webkit-scrollbar {
+    width: var(--scrollbar-width);
+}
+
+.card-content::-webkit-scrollbar-thumb {
+    background: var(--scrollbar-thumb);
+    border-radius: var(--card-radius);
+}
+
+/* =========================
+   Last.fm Card
+========================= */
+.lastfm-flex {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.lastfm-card img {
+    width: 70px;
+    height: 70px;
+    border-radius: 6px;
+}
+
+.lastfm-info p {
+    margin: 0;
+    font-size: 1rem;
+}
+
+#lastfm-track {
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.banner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;       /* controls spacing between logo, title, and paragraph */
+    text-align: center;
+    margin-top: 30px;  /* space from header */
+    margin-bottom: 20px; /* spacing before socials */
+}
+
+.banner-logo {
+    width: 200px;
+    height: 200px;
+}
+
+.banner-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+.banner-text {
+    font-size: 1rem;
+    color: #ccc;
+    max-width: 400px;
+    margin: 0;        /* remove extra margins so flex gap works perfectly */
+}
+
+/* Socials */
+.socials {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;      /* same as banner gap for consistency */
+}
